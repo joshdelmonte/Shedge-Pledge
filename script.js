@@ -9,7 +9,7 @@ function shedgePledge() {
     $(document).ready(function () {
       let momentVar = moment().format('dddd, MMMM Do, YYYY h:mm a');
       $("#currentDay").append(diaHoje);
-      let workHours = ["9 a.m.", "10 a.m.", "11 a.m.", "12 p.m.", "1 p.m.", "2 p.m.", "3 p.m.", "4 p.m.",
+      let horasTrabalhar = ["9 a.m.", "10 a.m.", "11 a.m.", "12 p.m.", "1 p.m.", "2 p.m.", "3 p.m.", "4 p.m.",
         "5 p.m."]
   
       //THEN the current day is displayed at the top of the calendar
@@ -21,9 +21,9 @@ function shedgePledge() {
       diaHoje();
     
   
-      for (i = 0; i < workHours.length; i++) {
+      for (i = 0; i < horasTrabalhar.length; i++) {
         let row = $("<div>").addClass("row");
-        let timeCol = $("<text-area>").text(workHours[i]).addClass("hour");
+        let timeCol = $("<text-area>").text(horasTrabalhar[i]).addClass("hour");
         let inputCol = $("<input>").attr("placeholder", "Enter this time's event").addClass("toDo-input time-block");
         saveBtn = $("<button>").addClass("btn btn-primary saveBtn").text("save");
         $(row).append(timeCol).append(inputCol).append(saveBtn);
@@ -50,102 +50,102 @@ function shedgePledge() {
       }
       addIdToSaveBtn();
   
-      let saveBtnId1 = $("#saveBtn-Id-1");
-      let saveBtnId2 = $("#saveBtn-Id-2");
-      let saveBtnId3 = $("#saveBtn-Id-3");
-      let saveBtnId4 = $("#saveBtn-Id-4");
-      let saveBtnId5 = $("#saveBtn-Id-5");
-      let saveBtnId6 = $("#saveBtn-Id-6");
-      let saveBtnId7 = $("#saveBtn-Id-7");
-      let saveBtnId8 = $("#saveBtn-Id-8");
-      let saveBtnId9 = $("#saveBtn-Id-9");
+      let saveBtnIdUm = $("#saveBtn-Id-1");
+      let saveBtnIdDois = $("#saveBtn-Id-2");
+      let saveBtnIdTres = $("#saveBtn-Id-3");
+      let saveBtnIdQuatro = $("#saveBtn-Id-4");
+      let saveBtnIdCinqo = $("#saveBtn-Id-5");
+      let saveBtnIdSeis = $("#saveBtn-Id-6");
+      let saveBtnIdSepte = $("#saveBtn-Id-7");
+      let saveBtnIdOito = $("#saveBtn-Id-8");
+      let saveBtnIdNove = $("#saveBtn-Id-9");
   
-      let toDoInput1 = $("#input-field-1");
-      let toDoInput2 = $("#input-field-2");
-      let toDoInput3 = $("#input-field-3");
-      let toDoInput4 = $("#input-field-4");
-      let toDoInput5 = $("#input-field-5");
-      let toDoInput6 = $("#input-field-6");
-      let toDoInput7 = $("#input-field-7");
-      let toDoInput8 = $("#input-field-8");
-      let toDoInput9 = $("#input-field-9");
+      let toDoInputUm = $("#input-field-1");
+      let toDoInputDois = $("#input-field-2");
+      let toDoInputTres = $("#input-field-3");
+      let toDoInputQuatro = $("#input-field-4");
+      let toDoInputCinqo = $("#input-field-5");
+      let toDoInputSeis = $("#input-field-6");
+      let toDoInputSepte = $("#input-field-7");
+      let toDoInputOito = $("#input-field-8");
+      let toDoInputNove = $("#input-field-9");
   
   
       let storedInput;
   
       //click events for each save button 
   
-      $(saveBtnId1).on("click", function (event) {
+      $(saveBtnIdUm).on("click", function (event) {
         event.preventDefault();
-        let toDoInput1 = $("#input-field-1").val().trim();
-        localStorage.setItem("toDo1", (toDoInput1));
+        let toDoInputUm = $("#input-field-1").val().trim();
+        localStorage.setItem("toDo1", (toDoInputUm));
       });
       let savedInput1 = (localStorage.getItem("toDo1"));
-      toDoInput1.val(savedInput1);
+      toDoInputUm.val(savedInput1);
   
-      $(saveBtnId2).on("click", function (event) {
+      $(saveBtnIdDois).on("click", function (event) {
         event.preventDefault();
-        let toDoInput2 = $("#input-field-2").val().trim();
-        localStorage.setItem("toDo2", (toDoInput2));
+        let toDoInputDois = $("#input-field-2").val().trim();
+        localStorage.setItem("toDo2", (toDoInputDois));
       });
       let savedInput2 = (localStorage.getItem("toDo2"));
-      toDoInput2.val(savedInput2);
+      toDoInputDois.val(savedInput2);
   
-      $(saveBtnId3).on("click", function (event) {
+      $(saveBtnIdTres).on("click", function (event) {
         event.preventDefault();
-        let toDoInput3 = $("#input-field-3").val().trim();
-        localStorage.setItem("toDo3", (toDoInput3));
+        let toDoInputTres = $("#input-field-3").val().trim();
+        localStorage.setItem("toDo3", (toDoInputTres));
       });
       let savedInput3 = (localStorage.getItem("toDo3"));
-      toDoInput3.val(savedInput3);
+      toDoInputTres.val(savedInput3);
   
-      $(saveBtnId4).on("click", function (event) {
+      $(saveBtnIdQuatro).on("click", function (event) {
         event.preventDefault();
-        let toDoInput4 = $("#input-field-4").val().trim();
-        localStorage.setItem("toDo4", (toDoInput4));
+        let toDoInputQuatro = $("#input-field-4").val().trim();
+        localStorage.setItem("toDo4", (toDoInputQuatro));
       });
       let savedInput4 = (localStorage.getItem("toDo4"));
-      toDoInput4.val(savedInput4);
+      toDoInputQuatro.val(savedInput4);
   
-      $(saveBtnId5).on("click", function (event) {
+      $(saveBtnIdCinqo).on("click", function (event) {
         event.preventDefault();
-        let toDoInput5 = $("#input-field-5").val().trim();
-        localStorage.setItem("toDo5", (toDoInput5));
+        let toDoInputCinqo = $("#input-field-5").val().trim();
+        localStorage.setItem("toDo5", (toDoInputCinqo));
       });
       let savedInput5 = (localStorage.getItem("toDo5"));
-      toDoInput5.val(savedInput5);
+      toDoInputCinqo.val(savedInput5);
   
-      $(saveBtnId6).on("click", function (event) {
+      $(saveBtnIdSeis).on("click", function (event) {
         event.preventDefault();
-        let toDoInput6 = $("#input-field-6").val().trim();
-        localStorage.setItem("toDo6", (toDoInput6));
+        let toDoInputSeis = $("#input-field-6").val().trim();
+        localStorage.setItem("toDo6", (toDoInputSeis));
       });
       let savedInput6 = (localStorage.getItem("toDo6"));
-      toDoInput6.val(savedInput6);
+      toDoInputSeis.val(savedInput6);
   
-      $(saveBtnId7).on("click", function (event) {
+      $(saveBtnIdSepte).on("click", function (event) {
         event.preventDefault();
-        let toDoInput7 = $("#input-field-7").val().trim();
-        localStorage.setItem("toDo7", (toDoInput7));
+        let toDoInputSepte = $("#input-field-7").val().trim();
+        localStorage.setItem("toDo7", (toDoInputSepte));
       });
       let savedInput7 = (localStorage.getItem("toDo7"));
-      toDoInput7.val(savedInput7);
+      toDoInputSepte.val(savedInput7);
   
-      $(saveBtnId8).on("click", function (event) {
+      $(saveBtnIdOito).on("click", function (event) {
         event.preventDefault();
-        let toDoInput8 = $("#input-field-8").val().trim();
-        localStorage.setItem("toDo8", (toDoInput8));
+        let toDoInputOito = $("#input-field-8").val().trim();
+        localStorage.setItem("toDo8", (toDoInputOito));
       });
       let savedInput8 = (localStorage.getItem("toDo8"));
-      toDoInput8.val(savedInput8);
+      toDoInputOito.val(savedInput8);
   
-      $(saveBtnId9).on("click", function (event) {
+      $(saveBtnIdNove).on("click", function (event) {
         event.preventDefault();
-        let toDoInput9 = $("#input-field-8").val().trim();
-        localStorage.setItem("toDo9", (toDoInput9));
+        let toDoInputNove = $("#input-field-8").val().trim();
+        localStorage.setItem("toDo9", (toDoInputNove));
       });
       let savedInput9 = (localStorage.getItem("toDo9"));
-      toDoInput9.val(savedInput9);
+      toDoInputNove.val(savedInput9);
   
       // show past, present, future events if else statements 
   
