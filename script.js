@@ -19,13 +19,12 @@ function shedgePledge() {
       }
   
       currentDay();
-      let row;
-      let timeCol;
+    
   
       for (i = 0; i < workHours.length; i++) {
         let row = $("<div>").addClass("row");
         let timeCol = $("<text-area>").text(workHours[i]).addClass("hour");
-        let inputCol = $("<input>").attr("placeholder", "Enter note here").addClass("toDo-input time-block");
+        let inputCol = $("<input>").attr("placeholder", "Enter this time's event").addClass("toDo-input time-block");
         saveBtn = $("<button>").addClass("btn btn-primary saveBtn").text("save");
         $(row).append(timeCol).append(inputCol).append(saveBtn);
         $("#calendaria").append(row);
@@ -148,7 +147,7 @@ function shedgePledge() {
       let savedInput9 = (localStorage.getItem("toDo9"));
       toDoInput9.val(savedInput9);
   
-      // start if else statements to show past, present, future events
+      // show past, present, future events if else statements 
   
       let now = new Date().getHours();
       if (now > 8) {
