@@ -18,6 +18,28 @@ function shedgePledge() {
         return currentDay;
       }
   
+      currentDay();
+      let row;
+      let timeCol;
+  
+      for (i = 0; i < workHours.length; i++) {
+        let row = $("<div>").addClass("row");
+        let timeCol = $("<text-area>").text(workHours[i]).addClass("hour");
+        let inputCol = $("<input>").attr("placeholder", "Enter note here").addClass("toDo-input time-block");
+        saveBtn = $("<button>").addClass("btn btn-primary saveBtn").text("save");
+        $(row).append(timeCol).append(inputCol).append(saveBtn);
+        $("#calendaria").append(row);
+      }
+  
+      //for loop to add id's to input fields
+      function addIdToInput() {
+        let inputId = document.getElementsByClassName("toDo-input");
+        let length = inputId.length;
+        for (i = 0; i < length; i++) {
+          inputId[i].id = "input-field-" + (i + 1);
+        }
+      };
+      addIdToInput();
   
   shedgePledge();
   
