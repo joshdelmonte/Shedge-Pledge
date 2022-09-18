@@ -41,5 +41,38 @@ function shedgePledge() {
       };
       addIdToInput();
   
+      //for loop to add id's to save buttons
+      function addIdToSaveBtn() {
+        let saveBtnId = document.getElementsByClassName("saveBtn");
+        let length = saveBtnId.length;
+        for (i = 0; i < length; i++) {
+          saveBtnId[i].id = "saveBtn-Id-" + (i + 1);
+        }
+      }
+      addIdToSaveBtn();
+  
+      let saveBtnId1 = $("#saveBtn-Id-1");
+      let saveBtnId2 = $("#saveBtn-Id-2");
+      let saveBtnId3 = $("#saveBtn-Id-3");
+      let saveBtnId4 = $("#saveBtn-Id-4");
+      let saveBtnId5 = $("#saveBtn-Id-5");
+      let saveBtnId6 = $("#saveBtn-Id-6");
+      let saveBtnId7 = $("#saveBtn-Id-7");
+      let saveBtnId8 = $("#saveBtn-Id-8");
+      let saveBtnId9 = $("#saveBtn-Id-9");
+  
+      let toDoInput1 = $("#input-field-1");
+      let toDoInput2 = $("#input-field-2");
+      let toDoInput3 = $("#input-field-3");
+      let toDoInput4 = $("#input-field-4");
+      let toDoInput5 = $("#input-field-5");
+      let toDoInput6 = $("#input-field-6");
+      let toDoInput7 = $("#input-field-7");
+      let toDoInput8 = $("#input-field-8");
+      let toDoInput9 = $("#input-field-9");
+  
+  
+      let storedInput;
+
   shedgePledge();
   
