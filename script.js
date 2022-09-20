@@ -7,14 +7,14 @@
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 function shedgePledge() {
     $(document).ready(function () {
-      let momentVar = moment().format('dddd, MMMM Do, YYYY h:mm a');
+      var momentVar = moment().format('dddd, MMMM Do, YYYY h:mm a');
       $("#currentDay").append(diaHoje);
-      let horasTrabalhar = ["9 a.m.", "10 a.m.", "11 a.m.", "12 p.m.", "1 p.m.", "2 p.m.", "3 p.m.", "4 p.m.",
+      var horasTrabalhar = ["9 a.m.", "10 a.m.", "11 a.m.", "12 p.m.", "1 p.m.", "2 p.m.", "3 p.m.", "4 p.m.",
         "5 p.m."]
   
       //THEN the current day is displayed at the top of the calendar
       function diaHoje() {
-        let diaHoje = $("#currentDay").text(momentVar);
+        var diaHoje = $("#currentDay").text(momentVar);
         return diaHoje;
       }
   
@@ -22,9 +22,9 @@ function shedgePledge() {
     
   
       for (i = 0; i < horasTrabalhar.length; i++) {
-        let row = $("<div>").addClass("row");
-        let timeCol = $("<text-area>").text(horasTrabalhar[i]).addClass("hour");
-        let inputCol = $("<input>").attr("placeholder", "Enter this time's event").addClass("toDo-input time-block");
+        var row = $("<div>").addClass("row");
+        var timeCol = $("<text-area>").text(horasTrabalhar[i]).addClass("hour");
+        var inputCol = $("<input>").attr("placeholder", "Enter this time's event").addClass("faz-input time-block");
         saveBtn = $("<button>").addClass("btn btn-primary saveBtn").text("save");
         $(row).append(timeCol).append(inputCol).append(saveBtn);
         $("#calendaria").append(row);
@@ -32,18 +32,18 @@ function shedgePledge() {
   
       //for loop to add id's to input fields
       function addIdToInput() {
-        let inputId = document.getElementsByClassName("toDo-input");
-        let length = inputId.length;
+        var inputId = document.getElementsByClassName("faz-input");
+        var length = inputId.length;
         for (i = 0; i < length; i++) {
-          inputId[i].id = "input-field-" + (i + 1);
+          inputId[i].id = "cade-" + (i + 1);
         }
       };
       addIdToInput();
   
       //for loop to add id's to save buttons
       function addIdToSaveBtn() {
-        let saveBtnId = document.getElementsByClassName("saveBtn");
-        let length = saveBtnId.length;
+        var saveBtnId = document.getElementsByClassName("saveBtn");
+        var length = saveBtnId.length;
         for (i = 0; i < length; i++) {
           saveBtnId[i].id = "saveBtn-Id-" + (i + 1);
         }
@@ -60,15 +60,15 @@ function shedgePledge() {
       let saveBtnIdOito = $("#saveBtn-Id-8");
       let saveBtnIdNove = $("#saveBtn-Id-9");
   
-      let toDoInputUm = $("#input-field-1");
-      let toDoInputDois = $("#input-field-2");
-      let toDoInputTres = $("#input-field-3");
-      let toDoInputQuatro = $("#input-field-4");
-      let toDoInputCinqo = $("#input-field-5");
-      let toDoInputSeis = $("#input-field-6");
-      let toDoInputSepte = $("#input-field-7");
-      let toDoInputOito = $("#input-field-8");
-      let toDoInputNove = $("#input-field-9");
+      let fazInputUm = $("#cade-1");
+      let fazInputDois = $("#cade-2");
+      let fazInputTres = $("#cade-3");
+      let fazInputQuatro = $("#cade-4");
+      let fazInputCinqo = $("#cade-5");
+      let fazInputSeis = $("#cade-6");
+      let fazInputSepte = $("#cade-7");
+      let fazInputOito = $("#cade-8");
+      let fazInputNove = $("#cade-9");
   
   
       let storedInput;
@@ -77,157 +77,157 @@ function shedgePledge() {
   
       $(saveBtnIdUm).on("click", function (event) {
         event.preventDefault();
-        let toDoInputUm = $("#input-field-1").val().trim();
-        localStorage.setItem("toDo1", (toDoInputUm));
+        let fazInputUm = $("#cade-1").val().trim();
+        localStorage.setItem("faz1", (fazInputUm));
       });
-      let savedInput1 = (localStorage.getItem("toDo1"));
-      toDoInputUm.val(savedInput1);
+      let savedInput1 = (localStorage.getItem("faz1"));
+      fazInputUm.val(savedInput1);
   
       $(saveBtnIdDois).on("click", function (event) {
         event.preventDefault();
-        let toDoInputDois = $("#input-field-2").val().trim();
-        localStorage.setItem("toDo2", (toDoInputDois));
+        let fazInputDois = $("#cade-2").val().trim();
+        localStorage.setItem("faz2", (fazInputDois));
       });
-      let savedInput2 = (localStorage.getItem("toDo2"));
-      toDoInputDois.val(savedInput2);
+      let savedInput2 = (localStorage.getItem("faz2"));
+        fazInputDois.val(savedInput2);
   
       $(saveBtnIdTres).on("click", function (event) {
         event.preventDefault();
-        let toDoInputTres = $("#input-field-3").val().trim();
-        localStorage.setItem("toDo3", (toDoInputTres));
+        let fazInputTres = $("#cade-3").val().trim();
+        localStorage.setItem("faz3", (fazInputTres));
       });
-      let savedInput3 = (localStorage.getItem("toDo3"));
-      toDoInputTres.val(savedInput3);
+      let savedInput3 = (localStorage.getItem("faz3"));
+      fazInputTres.val(savedInput3);
   
       $(saveBtnIdQuatro).on("click", function (event) {
         event.preventDefault();
-        let toDoInputQuatro = $("#input-field-4").val().trim();
-        localStorage.setItem("toDo4", (toDoInputQuatro));
+        let fazInputQuatro = $("#cade-4").val().trim();
+        localStorage.setItem("faz4", (fazInputQuatro));
       });
-      let savedInput4 = (localStorage.getItem("toDo4"));
-      toDoInputQuatro.val(savedInput4);
+      let savedInput4 = (localStorage.getItem("faz4"));
+      fazInputQuatro.val(savedInput4);
   
       $(saveBtnIdCinqo).on("click", function (event) {
         event.preventDefault();
-        let toDoInputCinqo = $("#input-field-5").val().trim();
-        localStorage.setItem("toDo5", (toDoInputCinqo));
+        let fazInputCinqo = $("#cade-5").val().trim();
+        localStorage.setItem("faz5", (fazInputCinqo));
       });
-      let savedInput5 = (localStorage.getItem("toDo5"));
-      toDoInputCinqo.val(savedInput5);
+      let savedInput5 = (localStorage.getItem("faz5"));
+      fazInputCinqo.val(savedInput5);
   
       $(saveBtnIdSeis).on("click", function (event) {
         event.preventDefault();
-        let toDoInputSeis = $("#input-field-6").val().trim();
-        localStorage.setItem("toDo6", (toDoInputSeis));
+        let fazInputSeis = $("#cade-6").val().trim();
+        localStorage.setItem("faz6", (fazInputSeis));
       });
-      let savedInput6 = (localStorage.getItem("toDo6"));
-      toDoInputSeis.val(savedInput6);
+      let savedInput6 = (localStorage.getItem("faz6"));
+      fazInputSeis.val(savedInput6);
   
       $(saveBtnIdSepte).on("click", function (event) {
         event.preventDefault();
-        let toDoInputSepte = $("#input-field-7").val().trim();
-        localStorage.setItem("toDo7", (toDoInputSepte));
+        let fazInputSepte = $("#cade-7").val().trim();
+        localStorage.setItem("faz7", (fazInputSepte));
       });
-      let savedInput7 = (localStorage.getItem("toDo7"));
-      toDoInputSepte.val(savedInput7);
+      let savedInput7 = (localStorage.getItem("faz7"));
+      fazInputSepte.val(savedInput7);
   
       $(saveBtnIdOito).on("click", function (event) {
         event.preventDefault();
-        let toDoInputOito = $("#input-field-8").val().trim();
-        localStorage.setItem("toDo8", (toDoInputOito));
+        let fazInputOito = $("#cade-8").val().trim();
+        localStorage.setItem("faz8", (fazInputOito));
       });
-      let savedInput8 = (localStorage.getItem("toDo8"));
-      toDoInputOito.val(savedInput8);
+      let savedInput8 = (localStorage.getItem("faz8"));
+      fazInputOito.val(savedInput8);
   
       $(saveBtnIdNove).on("click", function (event) {
         event.preventDefault();
-        let toDoInputNove = $("#input-field-8").val().trim();
-        localStorage.setItem("toDo9", (toDoInputNove));
+        let fazInputNove = $("#cade-8").val().trim();
+        localStorage.setItem("faz9", (fazInputNove));
       });
-      let savedInput9 = (localStorage.getItem("toDo9"));
-      toDoInputNove.val(savedInput9);
+      let savedInput9 = (localStorage.getItem("faz9"));
+      fazInputNove.val(savedInput9);
   
       // show past, present, future events if else statements 
   
       let now = new Date().getHours();
       if (now > 8) {
-        $("#input-field-0").addClass("past");
+        $("#cade-0").addClass("past");
       } else if (now >= 8 && now < 9) {
-        $("#input-field-0").addClass("present");
+        $("#cade-0").addClass("present");
       } else if (now < 8) {
-        $("#input-field-0").addClass("future");
+        $("#cade-0").addClass("future");
       }
   
       if (now > 9) {
-        $("#input-field-1").addClass("past");
+        $("#cade-1").addClass("past");
       } else if (now >= 9 && now < 10) {
-        $("#input-field-1").addClass("present");
+        $("#cade-1").addClass("present");
       } else if (now < 9) {
-        $("#input-field-1").addClass("future");
+        $("#cade-1").addClass("future");
       }
   
       if (now > 10) {
-        $("#input-field-2").addClass("past");
+        $("#cade-2").addClass("past");
       } else if (now >= 10 && now < 11) {
-        $("#input-field-2").addClass("present");
+        $("#cade-2").addClass("present");
       } else if (now < 10) {
-        $("#input-field-2").addClass("future");
+        $("#cade-2").addClass("future");
       }
   
       if (now > 11) {
-        $("#input-field-3").addClass("past");
+        $("#cade-3").addClass("past");
       } else if (now >= 11 && now < 12) {
-        $("#input-field-3").addClass("present");
+        $("#cade-3").addClass("present");
       } else if (now < 11) {
-        $("#input-field-3").addClass("future");
+        $("#cade-3").addClass("future");
       }
   
       if (now > 12) {
-        $("#input-field-4").addClass("past");
+        $("#cade-4").addClass("past");
       } else if (now >= 12 && now < 13) {
-        $("#input-field-4").addClass("present");
+        $("#cade-4").addClass("present");
       } else if (now < 12) {
-        $("#input-field-4").addClass("future");
+        $("#cade-4").addClass("future");
       }
   
       if (now > 13) {
-        $("#input-field-5").addClass("past");
+        $("#cade-5").addClass("past");
       } else if (now >= 13 && now < 14) {
-        $("#input-field-5").addClass("present");
+        $("#cade-5").addClass("present");
       } else if (now < 13) {
-        $("#input-field-5").addClass("future");
+        $("#cade-5").addClass("future");
       }
   
       if (now > 14) {
-        $("#input-field-6").addClass("past");
+        $("#cade-6").addClass("past");
       } else if (now >= 14 && now < 15) {
-        $("#input-field-6").addClass("present");
+        $("#cade-6").addClass("present");
       } else if (now < 14) {
-        $("#input-field-6").addClass("future");
+        $("#cade-6").addClass("future");
       }
   
       if (now > 15) {
-        $("#input-field-7").addClass("past");
+        $("#cade-7").addClass("past");
       } else if (now >= 15 && now < 16) {
-        $("#input-field-7").addClass("present");
+        $("#cade-7").addClass("present");
       } else if (now < 15) {
-        $("#input-field-7").addClass("future");
+        $("#cade-7").addClass("future");
       }
   
       if (now > 16) {
-        $("#input-field-8").addClass("past");
+        $("#cade-8").addClass("past");
       } else if (now >= 16 && now < 17) {
-        $("#input-field-8").addClass("present");
+        $("#cade-8").addClass("present");
       } else if (now < 16) {
-        $("#input-field-8").addClass("future");
+        $("#cade-8").addClass("future");
       }
   
       if (now > 17) {
-        $("#input-field-9").addClass("past");
+        $("#cade-9").addClass("past");
       } else if (now >= 17 && now < 18) {
-        $("#input-field-9").addClass("present");
+        $("#cade-9").addClass("present");
       } else if (now < 17) {
-        $("#input-field-9").addClass("future");
+        $("#cade-9").addClass("future");
       }
   
     });
